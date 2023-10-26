@@ -4,43 +4,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>Music Player</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
     <script>
         let track_list = [
             {
+                name: "High",
+                artist: "The Chainsmokers",
+                image: "https://i.scdn.co/image/ab67616d0000b273832cc315c70f8e4ad63519b9",
+                path: "https://i1.lol/.music/High.mp3",
+            }, {
+                name: "iPad",
+                artist: "The Chainsmokers",
+                image: "https://i.scdn.co/image/ab67616d0000b2732fb1745809e709d21953ba33",
+                path: "https://i1.lol/.music/iPad.mp3",
+            }, {
+                name: "HENTAI",
+                artist: "S3RL",
+                image: "https://i.scdn.co/image/ab67616d0000b2734199b4e4e0110b8ff5daa474",
+                path: "https://i1.lol/.music/Hentai%20-%20S3RL.mp3",
+            }, {
+                name: "MELT",
+                artist: "hatsune miku",
+                image: "https://static.wikia.nocookie.net/vocaloid/images/a/ab/Meruto.jpg",
+                path: "https://i1.lol/.music/melt.mp3",
+            }, {
+                name: "Animal Land",
+                artist: "Camellia",
+                image: "https://i.ytimg.com/vi/goA3TXoAfrI/maxresdefault.jpg",
+                path: "https://i1.lol/.music/Animal%20Land.mp3",
+            }, {
                 name: "KIDDING",
                 artist: "이세계아이돌",
-                image: "./artist.jpg",
-                path: "./041 이세계아이돌 - KIDDING.mp3",
-            },{
-                name: "Animal Land",
-                artist: "ななひら",
-                image: "./animalland.webp",
-                path: "./Animal Land.mp3",
-            },{
+                image: "https://i.namu.wiki/i/nqA2i8KCXJZYJRaXkKZ0rR6ua34fX7iTWX5rkZ_IAMV3JLxIzfF53M6iTeEOQA3vwMValE_3xy1fwOSNllNatw.webp",
+                path: "https://i1.lol/.music/041%20%EC%9D%B4%EC%84%B8%EA%B3%84%EC%95%84%EC%9D%B4%EB%8F%8C%20-%20KIDDING.mp3",
+            }, {
                 name: "내꺼 하는 법",
-                artist: "아야츠노 연우 (Ayatsuno dusdn)",
-                image: "./hq720.webp",
-                path: "./아야츠노 유니 ( Ayatsuno Yuni )   ‘내꺼 하는 법’ Music Video.mp3",
-            },{
+                artist: "아야츠노 유니 (Ayatsuno Yuni)", 
+                image: "https://i.ytimg.com/vi/pkypi5nXSYM/maxresdefault.jpg",
+                path: "https://i1.lol/.music/%EC%95%84%EC%95%BC%EC%B8%A0%EB%85%B8%20%EC%9C%A0%EB%8B%88%20%28%20Ayatsuno%20Yuni%20%29%20%20%20%E2%80%98%EB%82%B4%EA%BA%BC%20%ED%95%98%EB%8A%94%20%EB%B2%95%E2%80%99%20Music%20Video.mp3",
+            }, {
                 name: "숙성!! 로리신 레퀴엠☆",
-                artist: "시구레 우이(9살)",
-                image: "./asdf.webp",
-                path: "./【オリジナル楽曲】粛聖!! ロリ神レクイエム☆   しぐれうい（9さい）.mp3",
-            },{
-                name: "Never Gonna Give You Up",
-                artist: "Rick Astley",
-                image: "https://i.insider.com/602ee9d81a89f20019a377c6?width=1136&format=jpeg",
-                path: "./rickroll.MP3",
-            },
+                artist: "시구레 우이(9세)",
+                image: "https://i.namu.wiki/i/Jw-leIskbDvQ9CEfDPE1_wyTKIF1_P_aUWEr-hXqG7SQz5bobMDtopswJa5G8uoQyhQnulR8U0P4lL2Cf5rv4Q.webp",
+                path: "https://i1.lol/.music/%E3%80%90%E3%82%AA%E3%83%AA%E3%82%B8%E3%83%8A%E3%83%AB%E6%A5%BD%E6%9B%B2%E3%80%91%E7%B2%9B%E8%81%96%21%21%20%E3%83%AD%E3%83%AA%E7%A5%9E%E3%83%AC%E3%82%AF%E3%82%A4%E3%82%A8%E3%83%A0%E2%98%86%20%20%20%E3%81%97%E3%81%90%E3%82%8C%E3%81%86%E3%81%84%EF%BC%889%E3%81%95%E3%81%84%EF%BC%89.mp3",
+            }
         ];
     </script>
 </head>
 
 <body>
+    </div>
     <div class="player">
         <div class="details">
             <div class="now-playing">재생 중 0 / 0</div>

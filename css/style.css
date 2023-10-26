@@ -18,6 +18,8 @@ body {
     align-items: center;
     transition: background-color .5s;
     background-image: URL("https://source.unsplash.com/Qrspubmx6kE/640x360");
+    /* over 어쩌고로 밖에 나가는걸 막아줘 */
+    overflow: hidden;
 }
 
 .player {
@@ -43,6 +45,12 @@ body {
     justify-content: center;
     margin-top: 26px;
     text-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+
+    text-align: center;
+    white-space: nowrap;
+    /* overflow: hidden; */
+    text-overflow: ellipsis;
+    width: 90vw;
 }
 
 .track-art {
@@ -207,11 +215,47 @@ i.fa-retweet {
 }
 
 /* media mobile 가로 화면일때 사진 display none */
-@media screen and (max-height: 500px) {
+@media screen and (max-height: 600px) {
     .track-art {
         display: none;
     }
     .volume_container {
+        display: none;
+    }
+}
+
+/* media mobile 가로 화면일때 사진 display none */
+@media screen and (max-height: 700px) {
+    .volume_container {
+        display: none;
+    }
+}
+
+/* media mobile 가로 화면일때 사진 display none */
+@media screen and (max-width: 470px) {
+    .loop-track,
+    .random-track,
+    .volume_container {
+        display: none;
+    }
+    .volume_container {
+        display: none;
+    }
+}
+
+/* media mobile 가로 화면일때 사진 display none */
+@media screen and (max-width: 330px) {
+    .next-track,
+    .prev-track {
+        display: none;
+    }
+}
+/* media mobile 가로 화면일때 사진 display none */
+@media screen and (max-width: 300px) {
+    body {
+        background-image: none;
+    }
+    .track-art {
         display: none;
     }
 }

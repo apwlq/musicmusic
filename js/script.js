@@ -167,9 +167,15 @@ function seekUpdate() {
     }
 }
 
-// download-track 버튼을 클릭하면 다운로드합니다.
+// download-track 버튼을 클릭하면 다운로드 링크로 바로 다운로드 하게 해줘
 function downloadTrack() {
-    window.open(track_list[track_index].path);
+    // 다운로드 링크를 생성합니다.
+    let link = document.createElement('a');
+    link.href = curr_track.src;
+    link.download = curr_track.src;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
 }
 
 
