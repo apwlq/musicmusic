@@ -1,10 +1,10 @@
-@import url("https://cdn.2w.vc/Font/Pretendard/web/static/pretendard.css");
+@import url('https://webfontworld.github.io/NanumSquareNeo/NanumSquareNeo.css');
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Pretendard';
+    font-family: 'NanumSquareNeo';
     user-select: none;
     -webkit-user-select: none;
 }
