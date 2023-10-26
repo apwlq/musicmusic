@@ -1,15 +1,10 @@
-@font-face {
-    font-family: 'Pretendard-Regular';
-    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
-    font-weight: 400;
-    font-style: normal;
-}
+@import url("https://cdn.2w.vc/Font/Pretendard/web/static/pretendard.css");
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Pretendard-Regular';
+    font-family: 'Pretendard';
     user-select: none;
     -webkit-user-select: none;
 }
@@ -21,10 +16,11 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url('../artist.jpg');
+    transition: background-color .5s;
+    background-image: URL("https://source.unsplash.com/Qrspubmx6kE/640x360");
 }
 
-.main {
+.player {
     background-color: rgba(0, 0, 0, 0.25);
     height: 100vh;
     width: 100vw;
@@ -40,132 +36,182 @@ body {
     color: #fff;
 }
 
-.atrist {
+.details {
     display: flex;
+    align-items: center;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    margin-top: 26px;
+    text-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 }
 
-.atrist .profile {
-    width: 90vw;
-    height: 90vw;
+.track-art {
+    margin: 25px;
+    min-height: 250px;
+    min-width: 250px;
+    background-image: URL("https://source.unsplash.com/Qrspubmx6kE/640x360");
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    max-width: 460px;
-    max-height: 460px;
-
-    margin-bottom: 66px;
-}
-
-.atrist .profile img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
     border-radius: 20px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    transition: box-shadow .2s;
 }
 
-.atrist .name {
-    font-size: 22px;
+/* Changing the font sizes to suitable ones */
+.now-playing {
+    color: #ffffffee;
+    font-size: 1rem;
+    font-weight: 300;
+}
+
+.track-name {
+    color: #ffffffee;
+    font-size: 1.7rem;
+    font-weight: 500;
+}
+
+.track-artist {
+    color: #ffffffcc;
+    font-size: 1.2rem;
     font-weight: 400;
-    color: #fff;
-    margin-bottom: 8px;
 }
 
-.atrist .title {
-    font-size: 15px;
-    font-weight: 400;
-    color: #fff;
-    margin-bottom: 40px;
-}
-
-.playbar {
+.buttons {
     display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.random-track,
+.playpause-track,
+.prev-track,
+.next-track,
+.loop-track {
+    padding: 25px;
+    opacity: 0.8;
+    transition: opacity .2s;
+    transition: color .2s;
+}
+
+/* Change the opacity when mouse is hovered */
+.random-track:hover,
+.playpause-track:hover,
+.prev-track:hover,
+.next-track:hover,
+.loop-track:hover {
+    opacity: 1.0;
+}
+.loop-track{
+    color: #aaa;
+}
+
+/* Define the slider width so that it scales properly */
+.slider_container {
+    padding-top: 36px;
+    width: 100%;
+    max-width: 90vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
+}
+
+.volume_container {
+    padding-top: 36px;
+    width: 100%;
+    max-width: 90vw;
+    display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.playbar progress {
-    width: 90vw;
-    height: 10px;
-    position: absolute;
-    margin-bottom: 40px;
+/* Modify the appearance of the slider */
+.seek_slider,
+.volume_slider {
+    -webkit-appearance: none;
+    -moz-appearance: none;
     appearance: none;
-}
-
-.playbar progress::-webkit-progress-bar {
+    height: 10px;
+    width: 100%;
     background: rgba(0, 0, 0, 0.25);
-    /* border: 1px solid #eeeeee; */
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
     overflow: hidden;
-    border-radius: 12px;
 }
 
-.playbar progress::-webkit-progress-value {
-    background: rgba(255, 255, 255, 0.9);
-    border-radius: 12px;
-    height: 28px;
-    width: 48px;
+.seek_slider::-webkit-slider-thumb,
+.volume_slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none; 
+    height: 10px;
+    width: 10px;
+    /* border-radius: 50%; */
+    background-color: #fff;
+    box-shadow: -100vw 0 0 100vw #fff;
 }
 
+.seek_slider:hover,
+.volume_slider:hover {
+    opacity: 1.0;
+}
+
+.seek_slider {
+    width: 100%;
+}
+
+.volume_slider {
+    width: 100%;  
+}
 .time {
-    width: 90vw;
-
+    width: 100%;
     font-size: 14px;
-    /* display 양 끝으로 텍스트 가게 */
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.control {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 40px;
-
-    /* width full */
-    width: 100vw;
+.current-time,
+.total-duration {
+    padding: 10px;
 }
 
-.control .back svg,
-.control .play svg,
-.control .next svg {
-    width: 48px;
-    height: 48px;
-    fill: #fff;
-    margin: 0 24px;
+i.fa-volume-down,
+i.fa-volume-up {
+    padding: 10px;
+}
+
+i.fa-random,
+i.fa-play-circle,
+i.fa-pause-circle,
+i.fa-step-forward,
+i.fa-step-backward,
+i.fa-retweet {
     cursor: pointer;
 }
 
-/* desktop media */
-@media screen and (min-width: 670px) {
-    .atrist .profile {
-        width: 50vh;
-        height: 50vh;
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        max-width: 460px;
-        max-height: 460px;
+.download-track {
+    padding: 10px;
+    cursor: pointer;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 10px;
+    font-size: 1rem;
+    color: #fff;
+    transition: color .2s;
 
-        margin-bottom: 66px;
-    }
 }
 
+/* media mobile 가로 화면일때 사진 display none */
 @media screen and (max-height: 500px) {
-    .atrist .profile {
+    .track-art {
         display: none;
     }
-}
-
-@media screen and (min-width: 1024px) {
+    .volume_container {
+        display: none;
+    }
 }
